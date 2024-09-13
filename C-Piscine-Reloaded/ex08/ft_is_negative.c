@@ -6,16 +6,11 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:18:47 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/11 18:12:40 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/09/13 23:12:16 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_is_negative(int n)
 {

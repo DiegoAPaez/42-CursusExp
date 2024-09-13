@@ -6,35 +6,35 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:20:52 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/11 18:35:10 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/09/13 23:33:29 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-void	ft_putchar(char c)
+void	ft_print_params(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	ft_putchar('\n');
 }
 
 int	main(int argc, char *argv[])
 {
 	int	i;
-	int	j;
 
 	i = 1;
-	j = 0;
 	if (argc < 2)
 		return (0);
 	while (i < argc)
 	{
-		while (argv[i][j] != '\0')
-		{
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		j = 0;
+		ft_print_params(argv[i]);
 		i++;
 	}
 	return (0);
