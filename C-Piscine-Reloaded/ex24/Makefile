@@ -6,16 +6,44 @@
 #    By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/14 00:16:51 by dpaez             #+#    #+#              #
-#    Updated: 2024/09/14 00:22:24 by dpaez            ###   ########.fr        #
+#    Updated: 2024/09/15 20:57:24 by dpaez            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = cc -Wall -Wextra -Werror
+CC = cc
 
-HEADERS = ./includes
+CFLAGS = -Wall -Wextra -Werror
 
-SRC = srcs/ft_putchar srcs/ft_putstr srcs/ft_strcmp srcs/ft_strlen srcs/ft_swap
+HEADER = ./includes/libft.h
 
-OBJ = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
+SRC = srcs/ft_putchar.c \
+	srcs/ft_putstr.c \
+	srcs/ft_strcmp.c \
+	srcs/ft_strlen.c \
+	srcs/ft_swap.c \
+
+OBJ = $(SRC:.c=.o)
+
+AR = ar rcs
+
+RM = rm -f
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(AR) $@ $^
+
+%.o: %.c $(INCLUDE)
+	$(CC) $(FLAGS) -c -o $@ $^
+
+clean:
+	$(RM) $(OBJ)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
