@@ -5,29 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/14 00:16:51 by dpaez             #+#    #+#              #
-#    Updated: 2024/09/19 10:02:50 by dpaez            ###   ########.fr        #
+#    Created: 2024/09/19 09:56:56 by dpaez             #+#    #+#              #
+#    Updated: 2024/09/19 10:05:06 by dpaez            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = ft_display_file
 
 CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
-HEADER = ./includes/libft.h
-
-SRC = srcs/ft_putchar.c \
-	srcs/ft_putstr.c \
-	srcs/ft_strcmp.c \
-	srcs/ft_strlen.c \
-	srcs/ft_swap.c \
-
+SRC = ft_display_file.c
 OBJ = $(SRC:.c=.o)
 
 AR = ar rcs
-
 RM = rm -f
 
 .PHONY: all clean fclean re
