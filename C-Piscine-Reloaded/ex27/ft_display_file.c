@@ -43,10 +43,3 @@ int	main(int argc, char *argv[])
 	close(fd);
 	return (0);
 }
-
-/*
-Errores
-No argument -> "File name missing."
-More than one argument -> "Too many arguments."
-File cannot be rear -> "Cannot read file."
-*/

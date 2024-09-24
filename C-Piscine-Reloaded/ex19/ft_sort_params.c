@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:16:19 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/13 23:45:28 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:41:45 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,41 +32,40 @@ void	ft_print_params(char *arr[], int args)
 	}
 }
 
-void	swap(char *arr[], int i, int j)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*temp;
-
-	temp = arr[i];
-	arr[i] = arr[j];
-	arr[j] = temp;
-}
-
-void	bubble_sort(char *arr[], int n)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 1;
-	j = 0;
-	k = 0;
-	while (i < n)
+	while (*s1 && *s1 == *s2)
 	{
-		while (j < n - i)
-		{
-			if (arr[j][k] > arr[j + 1][k])
-				swap(arr, j, j + 1);
-			j++;
-		}
-		i++;
+		s1++;
+		s2++;
 	}
+	return ((int)(unsigned char)(*s1) - (int)(unsigned char)(*s2));
 }
 
 int	main(int argc, char *argv[])
 {
+	char	*tmp;
+	int		i;
+	int		j;
+
+	j = 1;
 	if (argc < 2)
 		return (0);
-	bubble_sort(argv, argc);
+	while (j)
+	{
+		j = 0;
+		i = 0;
+		while (++i < argc - 1)
+		{
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+			{
+				tmp = argv[i];
+				argv[i] = argv[i + 1];
+				argv[i + 1] = tmp;
+				j = 1;
+			}
+		}
+	}
 	ft_print_params(argv, argc);
 	return (0);
 }
