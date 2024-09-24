@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/14 00:16:51 by dpaez             #+#    #+#              #
-#    Updated: 2024/09/24 12:06:19 by dpaez            ###   ########.fr        #
+#    Created: 2024/09/23 16:26:14 by dpaez             #+#    #+#              #
+#    Updated: 2024/09/23 17:42:11 by dpaez            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,33 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-INCLUDE = includes/libft.h
-
-SRC = srcs/ft_putchar.c \
-	srcs/ft_putstr.c \
-	srcs/ft_strcmp.c \
-	srcs/ft_strlen.c \
-	srcs/ft_swap.c \
+SRC = ft_atoi.c \
+	ft_bzero.c \
+	ft_calloc.c \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_memset.c \
+	ft_strchr.c \
+	ft_strdup.c \
+	ft_strlcat.c \
+	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strncmp.c \
+	ft_strnstr.c \
+	ft_strrchr.c \
+	ft_tolower.c \
+	ft_toupper.c \
 
 OBJ = $(SRC:.c=.o)
+
+INCLUDE = libft.h
 
 AR = ar rcs
 
