@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 08:31:26 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/16 08:36:53 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/09/24 16:40:36 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_count_if(char **tab, int (*f)(char*))
 
 	i = 0;
 	count = 0;
-	while (tab[i] != '0')
+	while (tab[i])
 	{
-		if (f(tab[i]) == 1)
+		if ((*f)(tab[i]) == 1)
 			count++;
 		i++;
 	}

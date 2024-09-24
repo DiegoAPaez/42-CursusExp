@@ -6,35 +6,21 @@
 #    By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 09:56:56 by dpaez             #+#    #+#              #
-#    Updated: 2024/09/19 16:21:34 by dpaez            ###   ########.fr        #
+#    Updated: 2024/09/24 17:10:40 by dpaez            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_display_file
-
-CC = cc
 CFLAGS = -Wall -Wextra -Werror
+SOURCES = main.c
+DEST = ft_display_file
 
-SRC = ft_display_file.c
-OBJ = $(SRC:.c=.o)
+all: compile
 
-AR = ar rcs
-RM = rm -f
-
-.PHONY: all clean fclean re
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(AR) $@ $^
-
-%.o: %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c -o $@ $<
+compile:
+	gcc $(CFLAGS) -o $(DEST) $(SOURCES)
 
 clean:
-	$(RM) $(OBJ)
+	rm -f *.o
 
 fclean: clean
-	$(RM) $(NAME)
-
-re: fclean all
+	rm -f $(DEST)
