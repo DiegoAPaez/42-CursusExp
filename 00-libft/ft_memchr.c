@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 23:21:31 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/22 23:49:55 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/09/30 13:19:26 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *p, int value, size_t size)
 	temp = (unsigned char *) p;
 	while (size--)
 	{
-		if (*temp++ == value)
+		if (*temp++ == (unsigned char) value)
 			return (temp - 1);
 	}
 	return (NULL);

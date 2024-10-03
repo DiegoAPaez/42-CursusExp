@@ -5,35 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 23:08:45 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/22 23:18:40 by dpaez            ###   ########.fr       */
+/*   Created: 2024/09/30 13:10:14 by dpaez             #+#    #+#             */
+/*   Updated: 2024/09/30 13:10:55 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+static int	ft_isspace(int c)
 {
-	int	resultado;
-	int	signo;
-	int	i;
+	return (c == '\f' || c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v' || c == ' ');
+}
 
-	i = 0;
-	resultado = 0;
-	signo = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-	{
-		signo--;
-		i++;
-	}
-	else
-		signo++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		resultado = resultado * 10 + (str[i] - '0');
-		i++;
-	}
-	return (resultado * signo);
+int	ft_atoi(const char *str)
+{
+	int	num;
+	int	sign;
+
+	num = 0;
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+		num = num * 10 + *str++ - '0';
+	return (num * sign);
 }

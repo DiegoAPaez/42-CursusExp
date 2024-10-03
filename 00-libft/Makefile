@@ -6,7 +6,7 @@
 #    By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 16:26:14 by dpaez             #+#    #+#              #
-#    Updated: 2024/09/23 17:42:11 by dpaez            ###   ########.fr        #
+#    Updated: 2024/10/03 12:01:00 by dpaez            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,12 @@ SRC = ft_atoi.c \
 	ft_strrchr.c \
 	ft_tolower.c \
 	ft_toupper.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_substr.c \
+	ft_split.c \
+	ft_itoa.c \
+	ft_strmapi.c \
 
 OBJ = $(SRC:.c=.o)
 
