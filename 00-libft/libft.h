@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:30:49 by dpaez             #+#    #+#             */
-/*   Updated: 2024/10/03 12:00:39 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/03 12:55:16 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ void	*ft_memcpy(void *dest, void *src, size_t nb);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *p, int value, size_t size);
 void	*ft_calloc(size_t count, size_t size);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *small, size_t len);
