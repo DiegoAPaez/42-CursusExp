@@ -24,7 +24,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 /*
-A cada carácter de la string ’s’, aplica la función ’f’ dando como parámetros
-el índice de cada carácter dentro de ’s’ y la dirección del propio carácter,
-que podrá modificarse si es necesario.
+* DESCRIPTION
+*   Apply the function 'f' to each characters of the string 's', passing its 
+*   index as a first parameter.
+*   Each character is transmitted by address to 'f' so it can be modified if 
+*   necessary.
 */

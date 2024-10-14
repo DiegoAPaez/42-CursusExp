@@ -61,3 +61,14 @@ char	*ft_strtrim(const char*s1, const char *set)
 		len--;
 	return (new_str(s1, i, len - (i - 1)));
 }
+/*
+* DESCRIPTION
+*   Allocate (with malloc) and returns a copy of s1, without the characters 
+*   specified in set at the beginning and the end of s1.
+* PARAMETERS
+*   s1: string to trim
+*   set: characters to trim
+* RETURN VALUES
+*   ft_strtrim() returns a trimmed copy of s1; NULL if the memory allocation
+*   failed.
+*/

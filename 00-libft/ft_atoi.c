@@ -35,3 +35,8 @@ int	ft_atoi(const char *str)
 		num = num * 10 + *str++ - '0';
 	return (num * sign);
 }
+/*
+* DESCRIPTION
+*   The atoi() function converts the initial portion of the string pointed to 
+*   by str to int representation.
+*/

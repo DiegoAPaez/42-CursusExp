@@ -30,3 +30,10 @@ char	*ft_strdup(const char *src)
 	dupstr[i] = '\0';
 	return (dupstr);
 }
+/*
+* DESCRIPTION
+*   The strdup() function allocates sufficient memory for a copy of the string
+*   src, does the copy, and returns a pointer to it. The pointer may 
+*   subsequently be used as an argument to the function free.
+*   If insufficient memory is available, NULL is returned.
+*/

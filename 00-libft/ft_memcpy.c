@@ -29,7 +29,10 @@ void	*ft_memcpy(void *dest, void *src, size_t nb)
 	return (dest);
 }
 /*
-The memcpy function copies the specified number of bytes from one memory 
-location to the other memory location regardless of the type of data stored.
-It is declared in <string.h> header file.
+* DESCRIPTION
+*   The memcpy() function copies n bytes from memory area src to memory area
+*   dest. If dest and src overlap, behavior is undefined. Applications in 
+*   which dest and src might overlap should use memove instead.
+* RETURN VALUES
+*   The memcpy() function returns the original value of dest
 */

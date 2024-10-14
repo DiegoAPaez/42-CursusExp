@@ -24,3 +24,11 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *) s + 1);
 	return (NULL);
 }
+/*
+* DESCRIPTION
+*   The strrchr() function is identical to strchr(), except it locates the last
+*   occurence of c.
+* RETURN VALUES
+*   The function strrchr() returns a pointer to the located character, or NULL 
+*   if the character does not appear in the string.
+*/

@@ -24,3 +24,7 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+/*
+* DESCRIPTION
+*   Write the string s on the file descriptor fd.
+*/

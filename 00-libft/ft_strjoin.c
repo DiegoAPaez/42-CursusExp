@@ -32,3 +32,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3[j] = '\0';
 	return (s3);
 }
+/*
+* DESCRIPTION
+*   Allocate (with malloc) and returns a new string resulting from the 
+*   concatenation of s1 and s2.
+* PARAMETERS
+*   s1: prefix string
+*   s2: suffix string
+* RETURN VALUES
+*   ft_strjoin() returns the new string; NULL if the memory allocation failed.
+*/

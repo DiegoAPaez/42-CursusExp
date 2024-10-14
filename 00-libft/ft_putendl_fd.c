@@ -25,3 +25,8 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
+/*
+* DESCRIPTION
+*   ft_putendl_fd() writes the string s, followed by a newline, on the file 
+*   descriptor fd
+*/

@@ -23,3 +23,8 @@ void	ft_bzero(void *dest, size_t n)
 		n--;
 	}
 }
+/*
+* DESCRIPTION
+*   The bzero() function writes n zeroed bytes to the string dest. If n is zero, 
+*   bzero() does nothing.
+*/

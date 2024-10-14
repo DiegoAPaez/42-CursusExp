@@ -32,3 +32,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new[i] = '\0';
 	return (new);
 }
+/*
+* DESCRIPTION
+*   Apply the function 'f' to each characters in the string 's' to create a new
+*   string (with malloc) resulting of the successive applications of 'f'.
+* PARAMETERS
+*   s: string over which to iterate
+*   f: function to apply to each character
+* RETURN VALUES
+*   ft_strmapi() returns a new string resulting of the successive applications 
+*   of 'f'; NULL if the memory allocations failed.
+*/

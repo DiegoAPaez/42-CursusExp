@@ -18,8 +18,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 /*
-size_t write (int fd, void* buf, size_t cnt);
-fd: file descriptor
-buf: buffer to write data from.
-cnt: length of the buffer.
+* DESCRIPTION
+*   The ft_putchar_fd() function writes the character c on the file 
+*   descriptor fd.
 */

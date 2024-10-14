@@ -67,3 +67,15 @@ char	**ft_split(char const *s, char c)
 	ft_allocate(new, s, c);
 	return (new);
 }
+/*
+* DESCRIPTION
+*   Allocate (with malloc) and returns an array of strings obtained by 
+*   splitting s with the character c, used as delimiter.
+*   The returned array must be NUL-terminated.
+* PARAMETERS
+*   s: string to split
+*   c: delimiter character
+* RETURN VALUES
+*   ft_split() returns an array of strings resulting from the splitting of s,
+*   NULL if the memory allocation failed.
+*/

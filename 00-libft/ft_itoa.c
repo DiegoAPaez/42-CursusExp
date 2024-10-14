@@ -58,7 +58,10 @@ char	*ft_itoa(int n)
 	return (num);
 }
 /*
-Utilizando malloc(3), genera una string que represente el valor entero recibido
-como argumento. Los números negativos tienen que gestionarse.
-Retorno: La string que represente el número.NULL si falla la reserva de memoria.
+* DESCRIPTION
+*   Allocate (with malloc) and returns a string representing n.
+*   Negative numbers must be handled.
+* RETURN VALUES
+*   ft_itoa() returns the string representing n; NULL if the memory allocation
+*   failed.
 */

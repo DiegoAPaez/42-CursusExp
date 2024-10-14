@@ -31,3 +31,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
+/*
+* DESCRIPTION
+*   Allocate (with malloc) and return a new string from the string s.
+*   This new string starts at index 'start' and has a maximum size of 'len'.
+* PARAMETERS
+*   s: string from which to extract the new string
+*   start: start index of the new string in the string 's'
+*   len: maximum size of the new string
+* RETURN VALUES
+*   ft_substr() returns the new string; NULL if the memory allocation failed.
+*/

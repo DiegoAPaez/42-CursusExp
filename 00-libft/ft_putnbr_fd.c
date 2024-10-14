@@ -33,3 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 10)
 		ft_putchar_fd(n + 48, fd);
 }
+/*
+* DESCRIPTION
+*   ft_putnbr_fd() writes the int n on the file descriptor fd
+*/

@@ -24,3 +24,10 @@ void	*ft_memset(void *dest, int ch, size_t count)
 	}
 	return (dest);
 }
+/*
+* DESCRIPTION
+*   The memset() function writes len bytes of value ch (converted to an unsigned
+*   char) to the string b.
+* RETURN VALUES
+*   The memset() function returns its first argument.
+*/

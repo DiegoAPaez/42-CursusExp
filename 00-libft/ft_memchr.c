@@ -24,3 +24,11 @@ void	*ft_memchr(const void *p, int value, size_t size)
 	}
 	return (NULL);
 }
+/*
+* DESCRIPTION
+*   the memchr() function locates the first occurence of value (convered to an 
+*   unsigned char) in string p.
+* RETURN VALUES
+*   The memchr() function returns a pointer to the byte located, or NULL if
+*   no such byte exists within size bytes.
+*/

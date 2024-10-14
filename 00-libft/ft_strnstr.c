@@ -34,3 +34,14 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 	}
 	return (0);
 }
+/*
+* DESCRIPTION
+*   The strnstr() function locates the first occurence of the null-terminated 
+*   string small in the string big, where not more than len characters are 
+*   searched.
+*   Characters that appear after a '\0' character are not searched.
+* RETURN VALUES
+*   If small is an empty string, big is returned; if small occurs nowhere in 
+*   big, NULL is returned; otherwise a pointer to the first character of the 
+*   first occurence of small is returned.
+*/
