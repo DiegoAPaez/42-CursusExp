@@ -12,32 +12,17 @@
 
 #include <stdio.h>
 #include "libft.h"
-//#include <string.h>
-//#include <stdlib.h>
 
-/*// Function prototypes, assuming your custom versions have the same names
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int x);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_atoi(const char *str);
-int		ft_memcmp(const void *p1, const void *p2, size_t size);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-size_t	ft_strlen(const char *src);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-void	ft_bzero(void *dest, size_t n);
-void	*ft_memset(void *dest, int ch, size_t count);
-void	*ft_memcpy(void *dest, void *src, size_t nb);
-void	*ft_memmove(void *dst, const void *src, size_t len);
-void	*ft_memchr(const void *p, int value, size_t size);
-void	*ft_calloc(size_t count, size_t size);*/
+// Helper function to print result of ft_split
+void print_split_result(char **split_result) {
+    int i = 0;
+    while (split_result[i]) {
+        printf("split_result[%d] = \"%s\"\n", i, split_result[i]);
+        i++;
+    }
+}
 
 // Test functions
-
 void test_ft_isalpha() {
     printf("ft_isalpha('A') = %d\n", ft_isalpha('A')); // Expected 1
     printf("ft_isalpha('z') = %d\n", ft_isalpha('z')); // Expected 1
@@ -182,6 +167,100 @@ void test_ft_calloc() {
     free(arr);
 }
 
+void test_ft_strjoin() {
+    char *result1 = ft_strjoin("Hello", "World");
+    printf("ft_strjoin(\"Hello\", \"World\") = \"%s\"\n", result1); // Expected "HelloWorld"
+    free(result1);
+
+    char *result2 = ft_strjoin("", "World");
+    printf("ft_strjoin(\"\", \"World\") = \"%s\"\n", result2); // Expected "World"
+    free(result2);
+}
+
+void test_ft_strtrim() {
+    char *result1 = ft_strtrim("   Hello World   ", " ");
+    printf("ft_strtrim(\"   Hello World   \", \" \") = \"%s\"\n", result1); // Expected "Hello World"
+    free(result1);
+
+    char *result2 = ft_strtrim("##Hello###", "#");
+    printf("ft_strtrim(\"##Hello###\", \"#\") = \"%s\"\n", result2); // Expected "Hello"
+    free(result2);
+}
+
+void test_ft_substr() {
+    char *result1 = ft_substr("Hello World", 6, 5);
+    printf("ft_substr(\"Hello World\", 6, 5) = \"%s\"\n", result1); // Expected "World"
+    free(result1);
+
+    char *result2 = ft_substr("Hello World", 0, 5);
+    printf("ft_substr(\"Hello World\", 0, 5) = \"%s\"\n", result2); // Expected "Hello"
+    free(result2);
+}
+
+void test_ft_split() {
+    char **result1 = ft_split("Hello World This Is C", ' ');
+    printf("ft_split(\"Hello World This Is C\", ' '):\n");
+    print_split_result(result1); // Expected ["Hello", "World", "This", "Is", "C"]
+    
+    // Free allocated memory
+    int i = 0;
+    while (result1[i]) {
+        free(result1[i]);
+        i++;
+    }
+    free(result1);
+
+    char **result2 = ft_split("apple,banana,orange", ',');
+    printf("ft_split(\"apple,banana,orange\", ','):\n");
+    print_split_result(result2); // Expected ["apple", "banana", "orange"]
+    
+    // Free allocated memory
+    i = 0;
+    while (result2[i]) {
+        free(result2[i]);
+        i++;
+    }
+    free(result2);
+}
+
+void test_ft_itoa() {
+    char *result1 = ft_itoa(12345);
+    printf("ft_itoa(12345) = \"%s\"\n", result1); // Expected "12345"
+    free(result1);
+
+    char *result2 = ft_itoa(-987);
+    printf("ft_itoa(-987) = \"%s\"\n", result2); // Expected "-987"
+    free(result2);
+}
+
+void test_ft_strmapi() {
+    char test_function(unsigned int i, char c) {
+        return (char)(c + i); // Example: add the index to each char's ASCII value
+    }
+
+    char *result1 = ft_strmapi("abc", test_function);
+    printf("ft_strmapi(\"abc\", test_function) = \"%s\"\n", result1); // Expected "ace" ('a'+0, 'b'+1, 'c'+2)
+    free(result1);
+
+    char *result2 = ft_strmapi("xyz", test_function);
+    printf("ft_strmapi(\"xyz\", test_function) = \"%s\"\n", result2); // Expected "x{~"
+    free(result2);
+}
+
+void test_ft_striteri() {
+    void test_function(unsigned int i, char *c) {
+        *c = *c + i; // Modify the char by adding its index
+    }
+
+    char str1[] = "abc";
+    ft_striteri(str1, test_function);
+    printf("ft_striteri(\"abc\", test_function) = \"%s\"\n", str1); // Expected "ace"
+
+    char str2[] = "xyz";
+    ft_striteri(str2, test_function);
+    printf("ft_striteri(\"xyz\", test_function) = \"%s\"\n", str2); // Expected "x{~"
+}
+
 int main() {
     // Call test functions
     test_ft_isalpha();
@@ -203,8 +282,14 @@ int main() {
     test_ft_memmove();
     test_ft_memchr();
     test_ft_calloc();
+    test_ft_strjoin();
+    test_ft_strtrim();
+    test_ft_substr();
+    test_ft_split();
+    test_ft_itoa();
+    test_ft_strmapi();
+    test_ft_striteri();
     
-    // Add more test functions here for remaining prototypes
     return 0;
 }
 
