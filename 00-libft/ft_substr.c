@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:03:38 by dpaez             #+#    #+#             */
-/*   Updated: 2024/10/01 18:29:13 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/15 18:44:39 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
 	sub = (char *) malloc(sizeof(char) * len + 1);
 	if (!sub)
 		return (NULL);

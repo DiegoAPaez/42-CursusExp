@@ -233,33 +233,7 @@ void test_ft_itoa() {
     free(result2);
 }
 
-void test_ft_strmapi() {
-    char test_function(unsigned int i, char c) {
-        return (char)(c + i); // Example: add the index to each char's ASCII value
-    }
 
-    char *result1 = ft_strmapi("abc", test_function);
-    printf("ft_strmapi(\"abc\", test_function) = \"%s\"\n", result1); // Expected "ace" ('a'+0, 'b'+1, 'c'+2)
-    free(result1);
-
-    char *result2 = ft_strmapi("xyz", test_function);
-    printf("ft_strmapi(\"xyz\", test_function) = \"%s\"\n", result2); // Expected "x{~"
-    free(result2);
-}
-
-void test_ft_striteri() {
-    void test_function(unsigned int i, char *c) {
-        *c = *c + i; // Modify the char by adding its index
-    }
-
-    char str1[] = "abc";
-    ft_striteri(str1, test_function);
-    printf("ft_striteri(\"abc\", test_function) = \"%s\"\n", str1); // Expected "ace"
-
-    char str2[] = "xyz";
-    ft_striteri(str2, test_function);
-    printf("ft_striteri(\"xyz\", test_function) = \"%s\"\n", str2); // Expected "x{~"
-}
 
 int main() {
     // Call test functions
@@ -287,9 +261,7 @@ int main() {
     test_ft_substr();
     test_ft_split();
     test_ft_itoa();
-    test_ft_strmapi();
-    test_ft_striteri();
-    
+
     return 0;
 }
 

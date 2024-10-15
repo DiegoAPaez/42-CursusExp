@@ -63,7 +63,7 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile
 	$(AR) $@ $^
 
 %.o: %.c $(INCLUDE)
