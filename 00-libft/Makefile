@@ -66,7 +66,7 @@ all: $(NAME)
 $(NAME): $(OBJ) 
 	$(AR) $(NAME) $(OBJ)
 
-%.o: %.c $(INCLUDE)
+%.o: %.c $(INCLUDE) Makefile
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
