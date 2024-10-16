@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 21:01:57 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/22 22:13:43 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/15 21:34:57 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char			cc;
+	unsigned int	i;
+
+	i = 0;
+	cc = (char) c;
+	while (s[i])
 	{
-		if (*s++ == c)
-			return ((char *) s - 1);
+		if (s[i] == cc)
+			return ((char *) &s[i]);
+		i++;
 	}
-	if (c == '\0')
-		return ((char *) s);
+	if (s[i] == cc)
+		return ((char *) &s[i]);
 	return (NULL);
 }
 /*
