@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:51:34 by dpaez             #+#    #+#             */
-/*   Updated: 2024/10/03 11:59:57 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/17 15:29:14 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	size_t	len;
 
+	if (!s || !(f))
+		return (NULL);
 	len = ft_strlen(s);
 	new = (char *) malloc(sizeof(char) * (len + 1));
 	if (!new)

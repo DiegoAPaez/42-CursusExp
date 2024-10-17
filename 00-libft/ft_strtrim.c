@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 17:30:29 by dpaez             #+#    #+#             */
-/*   Updated: 2024/10/02 10:38:07 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/17 15:33:14 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ char	*ft_strtrim(const char*s1, const char *set)
 	int		len;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	len = ft_strlen(s1) - 1;
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(""));

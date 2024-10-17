@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:06:21 by dpaez             #+#    #+#             */
-/*   Updated: 2024/10/03 12:18:26 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/17 15:29:44 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
+	if (!s || !(f))
+		return ;
 	while (s[i] != '\0')
 	{
 		(*f)(i, &s[i]);
