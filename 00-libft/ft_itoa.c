@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int	digit_count(int nb)
+static int	digit_count(int nb)
 {
 	int	count;
 
