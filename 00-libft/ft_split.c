@@ -5,77 +5,85 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 18:43:33 by dpaez             #+#    #+#             */
-/*   Updated: 2024/10/02 21:02:11 by dpaez            ###   ########.fr       */
+/*   Created: 2024/10/16 23:25:17 by dpaez             #+#    #+#             */
+/*   Updated: 2024/10/17 15:16:43 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-static void	ft_allocate(char **tab, char const *s, char del)
+static int	ft_count_word(char const *s, char c)
 {
-	char		**tab_p;
-	char const	*tmp;
+	int	count;
+	int	i;
 
-	tmp = s;
-	tab_p = tab;
-	while (*tmp)
+	count = 0;
+	i = 0;
+	while (s[i])
 	{
-		while (*s == del)
-			s++;
-		tmp = s;
-		while (*tmp && *tmp != del)
-			tmp++;
-		if (*tmp == del || tmp > s)
+		while (s[i] == c)
+			i++;
+		if (s[i])
+			count++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (count);
+}
+
+static char	*ft_save_word(char const *str, char c)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	dest = malloc(sizeof(char) * (i + 1));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != c)
+	{
+		dest[i] = str[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+static char	**ft_free(char **split, int i)
+{
+	while (i > 0)
+		free(split[--i]);
+	free(split);
+	return (NULL);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**dest;
+	int		i;
+
+	if (!str)
+		return (NULL);
+	i = 0;
+	dest = (char **) malloc(sizeof(char *) * (ft_count_word(str, c) + 1));
+	if (!dest)
+		return (NULL);
+	while (*str)
+	{
+		while (*str && *str == c)
+			str++;
+		if (*str && *str != c)
 		{
-			*tab_p = ft_substr(s, 0, tmp - s);
-			s = tmp;
-			tab_p++;
+			dest[i] = ft_save_word(str, c);
+			if (!dest[i])
+				return (ft_free(dest, i));
+			i++;
+			while (*str && *str != c)
+				str++;
 		}
 	}
-	*tab_p = NULL;
+	dest[i] = NULL;
+	return (dest);
 }
-
-static int	ft_count_words(char const *s, char del)
-{
-	int	word_count;
-
-	word_count = 0;
-	while (*s)
-	{
-		while (*s == del)
-			s++;
-		if (*s)
-			word_count++;
-		while (*s && *s != del)
-			s++;
-	}
-	return (word_count);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**new;
-	int		size;
-
-	if (!s)
-		return (NULL);
-	size = ft_count_words(s, c);
-	new = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!new)
-		return (NULL);
-	ft_allocate(new, s, c);
-	return (new);
-}
-/*
-* DESCRIPTION
-*   Allocate (with malloc) and returns an array of strings obtained by 
-*   splitting s with the character c, used as delimiter.
-*   The returned array must be NUL-terminated.
-* PARAMETERS
-*   s: string to split
-*   c: delimiter character
-* RETURN VALUES
-*   ft_split() returns an array of strings resulting from the splitting of s,
-*   NULL if the memory allocation failed.
-*/
