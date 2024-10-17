@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 20:21:50 by dpaez             #+#    #+#             */
-/*   Updated: 2024/09/30 13:43:33 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/10/17 19:05:37 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!src || !dst)
-		return (0);
 	i = 0;
 	if (size == 0)
 		return (ft_strlen(src));
@@ -43,4 +41,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 *   create. That means the length of src.
 *   If the return value is >= size, the output string has been truncated.
 *   It is the caller's responsibility to handle this.
+* PROTECTION
+*	if (!src || !dst)
+*		return (0);
 */
