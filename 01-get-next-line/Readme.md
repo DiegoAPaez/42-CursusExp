@@ -11,11 +11,17 @@ The function reads from a file or input stream until a newline is encountered or
 Static variables have the property of preserving their value even after they are out of their scope! Hence, a static variable preserves its previous value in its previous scope and is not initialized again in the new scope.
 
 **Facts about static variables:**
+
 **_1._** Remains in memory while the program is running. A normal or auto variable is destroyed when a function call where the variable was declared is over.
+
 **_2._** Are allocated memory in the data segment, not the stack segment.
+
 **_3._** Are initialized as 0 if not initialized explicitly.
+
 **_4._** Can only be initialized using constant literals.
+
 **_5._** Should not be declared inside a structure. The C compiler requires the entire structure elements to be placed together.
+
 
 ## Function Prototypes
 
