@@ -62,6 +62,7 @@ char *get_next_line(int fd);
 ### Usage
 
 To compile and run your `get_next_line` project with a specific BUFFER_SIZE, use the following commands:
+
 **Compilation (example value)**
 
 ```console
