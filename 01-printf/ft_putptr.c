@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:46:38 by dpaez             #+#    #+#             */
-/*   Updated: 2024/11/11 13:50:28 by dpaez            ###   ########.fr       */
+/*   Created: 2024/11/11 13:59:47 by dpaez             #+#    #+#             */
+/*   Updated: 2024/11/11 14:02:09 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
+#include "ft_printf.h"
 
-int	ft_printf(char const *str, ...);
-int	ft_putaddress(unsigned long long nb);
-int	ft_putchar(char c);
-int	ft_puthex(unsigned int nb, char base);
-int	ft_putnbr(int nb);
-int	ft_putstr(char *s);
-int	ft_putunbr(unsigned int nb);
-int	ft_putptr(va_list argp);
+int	ft_putptr(va_list argp)
+{
+	void	*ptr;
+	int		count;
 
-#endif
+	ptr = va_arg(argp, void *);
+	if (ptr == NULL)
+		count = ft_putstr("(nil)");
+	else
+	{
+		count = ft_putstr("0x");
+		count += ft_putaddress((unsigned long long)ptr);
+	}
+	return (count);
+}

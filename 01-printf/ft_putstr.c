@@ -15,11 +15,11 @@
 int	ft_putstr(char *s)
 {
 	int	i;
-	int	count;
 
+	if (s == NULL)
+		return (write(1, "(null)", 6));
 	i = 0;
-	count = 0;
 	while (s[i])
-		count += ft_putchar(s[i++]);
-	return (count);
+		ft_putchar(s[i++]);
+	return (i);
 }

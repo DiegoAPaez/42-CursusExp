@@ -6,7 +6,7 @@
 /*   By: dpaez <dpaez@student.42barcelona.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:55:56 by dpaez             #+#    #+#             */
-/*   Updated: 2024/11/11 10:57:13 by dpaez            ###   ########.fr       */
+/*   Updated: 2024/11/11 14:23:54 by dpaez            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_putnbr(int nb)
 	if (nb >= 10)
 	{
 		count += ft_putnbr(nb / 10);
-		count += nb % 10;
+		count += ft_putnbr(nb % 10);
 	}
 	if (nb < 10)
 		count += ft_putchar(nb + 48);
