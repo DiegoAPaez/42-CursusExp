@@ -22,7 +22,6 @@ Static variables have the property of preserving their value even after they are
 
 **_5._** Should not be declared inside a structure. The C compiler requires the entire structure elements to be placed together.
 
-
 ## Function Prototypes
 
 ### Core Function
@@ -59,3 +58,24 @@ char *get_next_line(int fd);
   - Empty files and files that do not end with a newline.
   - Varying BUFFER_SIZE values (including very small and very large sizes).
 - **Static Variables**: The project uses a static variable to maintain the state between function calls and allow reading from the file descriptor across multiple calls to get_next_line.
+
+### Usage
+
+To compile and run your `get_next_line` project with a specific BUFFER_SIZE, use the following commands:
+**Compilation (example value)**
+
+```console
+cc -D BUFFER_SIZE=42 tester.c get_next_line.c get_next_line_utils.c -o tester
+```
+
+**Running the program**
+
+```console
+./tester
+```
+
+**Test with Valgrind**
+
+```console
+valgrind --leak-check=full --track-origins=yes ./tester
+```
