@@ -96,6 +96,27 @@ void test_percentage_conversion() {
     printf("Original: %%\n\n");
 }
 
+void test_no_flags() {
+    printf("------------------------------\n");
+    printf("Testing without flags 'cspdiuxX%%':\n");
+    ft_printf("Custom: Print just text.\n");
+    printf("Original: Print just text.\n\n");
+}
+
+void test_multiple_args() {
+    printf("------------------------------\n");
+    printf("Testing multiple arguments:\n");
+    ft_printf("Custom: %d %s %c %p %u %x %X %%\n", 42, "Hello, World!", 'A', NULL, 1234U, 1234, 1234);
+    printf("Original: %d %s %c %p %u %x %X %%\n\n", 42, "Hello, World!", 'A', NULL, 1234U, 1234, 1234);
+}
+
+void test_mixed_text_and_args() {
+    printf("------------------------------\n");
+    printf("Testing mixed text and arguments:\n");
+    ft_printf("Custom: Hello %s! Welcome to %d, %c %p %u %x %X %%\n", "World", 42, 'A', NULL, 1234U, 1234, 1234);
+    printf("Original: Hello %s! Welcome to %d, %c %p %u %x %X %%\n\n", "World", 42, 'A', NULL, 1234U, 1234, 1234);
+}
+
 int main() {
     printf("Running all tests for ft_printf:\n\n");
 
@@ -106,6 +127,9 @@ int main() {
     test_unsigned_conversion();
     test_hex_conversion();
     test_percentage_conversion();
+    test_no_flags();
+    test_multiple_args();
+    test_mixed_text_and_args();
 
     return 0;
 }
