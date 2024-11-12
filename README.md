@@ -20,8 +20,8 @@ While this repository is a work in progress, here’s a preview of the kinds of 
 
 Here is a list of projects included in this repository, along with their current status:
 
-- **Libft** - _Complete_ ✅: A custom C library that replicates functions from the C standard library.
-- **Get_Next_Line** - _Complete_ ✅: A program that reads lines from a file descriptor in a memory-efficient way.
+- **libft** - _Complete_ ✅: A custom C library that replicates functions from the C standard library.
+- **get_next_line** - _Complete_ ✅: A program that reads lines from a file descriptor in a memory-efficient way.
 - **ft_printf** - _In Progress_ 🔄: Building a formatted output conversion library similar to `printf`.
 
 ## About 42 Barcelona 🌍
