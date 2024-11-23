@@ -29,16 +29,16 @@ void test_file(const char *filename)
 int main()
 {
     // Basic Tests
-    test_file("tests/single_line.txt");       // Single line with no newline
-    test_file("tests/multiple_short_lines.txt"); // Multiple short lines
-    test_file("tests/single_long_line.txt");   // Single long line exceeding BUFFER_SIZE
-    test_file("tests/multiple_lines.txt"); // Multiple long lines exceeding BUFFER_SIZE
+    test_file("test_files/single_line.txt");       // Single line with no newline
+    test_file("test_files/multiple_short_lines.txt"); // Multiple short lines
+    test_file("test_files/single_long_line.txt");   // Single long line exceeding BUFFER_SIZE
+    test_file("ttest_filesests/multiple_lines.txt"); // Multiple long lines exceeding BUFFER_SIZE
 
     // Edge Cases
-    test_file("tests/empty_file.txt");         // Empty file
-    test_file("tests/only_newlines.txt");      // File with only newlines
-    test_file("tests/mixed_newlines_chars.txt"); // Mixed characters and newlines
-    test_file("tests/ending_with_newline.txt");  // File ending with newline
+    test_file("test_files/empty_file.txt");         // Empty file
+    test_file("test_files/only_newlines.txt");      // File with only newlines
+    test_file("test_files/mixed_newlines_chars.txt"); // Mixed characters and newlines
+    test_file("test_files/ending_with_newline.txt");  // File ending with newline
 
     return 0;
 }
