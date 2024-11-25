@@ -15,6 +15,7 @@ int	ft_printf(char const *str, ...);
 Values of the passed arguments can be accessed through the header file named <stdarg.h>
 
 **_Methods_**
+
 **va_start(va_list ap, argN)** - This enables access to variadic function arguments, where _va_list_ will be the pointer to the last fixed argument in the variadic function _argN_ is the last fixed argument in the variadic function.
 From the above variadic function (ft_printf(char const *str, ...);), str is the last fixed argument making it the argN. Whereas *va_list ap\* will be a pointer to argN (str).
 
@@ -29,12 +30,19 @@ From the above variadic function (ft_printf(char const *str, ...);), str is the 
 ## Supported Format Specifiers
 
 **%c**: Prints a single character.
+
 **%s**: Prints a string.
+
 **%p**: Prints a pointer address in hexadecimal format.
+
 **%d** or **%i**: Prints a signed decimal integer (base 10).
+
 **%u**: Prints an unsigned decimal integer (base 10).
+
 **%x**: Prints a number in hexadecimal (lowercase).
+
 **%X**: Prints a number in hexadecimal (uppercase).
+
 **%%**: Prints the literal % symbol.
 
 ---
@@ -55,42 +63,30 @@ Here is a brief description of the helper functions used in the implementation o
 **Prototype:** `int ft_putaddress(unsigned long long nb);`  
 This function prints a memory address in hexadecimal format using lowercase letters (`abcdef`) and returns the number of characters printed.
 
----
-
 #### 2. `ft_putchar`
 
 **Prototype:** `int ft_putchar(char c);`  
 Prints a single character to the standard output and returns the number of characters written (always 1).
-
----
 
 #### 3. `ft_puthex`
 
 **Prototype:** `int ft_puthex(unsigned int nb, char base);`  
 Prints an unsigned integer in hexadecimal format. If `base` is `'x'`, it uses lowercase letters, and if `'X'`, it uses uppercase letters. Returns the number of characters printed.
 
----
-
 #### 4. `ft_putnbr`
 
 **Prototype:** `int ft_putnbr(int nb);`  
 Prints an integer, including handling negative values and the edge case for the minimum integer (`-2147483648`). Returns the number of characters printed.
-
----
 
 #### 5. `ft_putptr`
 
 **Prototype:** `int ft_putptr(va_list argp);`  
 Handles the conversion of a pointer to its string representation. If the pointer is `NULL`, it prints `(nil)`. Otherwise, it prefixes the address with `0x` and uses `ft_putaddress` to print the memory address. Returns the total number of characters printed.
 
----
-
 #### 6. `ft_putstr`
 
 **Prototype:** `int ft_putstr(char *s);`  
 Prints a string. If the string is `NULL`, it prints `(null)`. Returns the total number of characters printed.
-
----
 
 #### 7. `ft_putunbr`
 
@@ -110,6 +106,7 @@ make
 ```
 
 This will create libftprintf.a and the necessary .o files.
+
 **2.** Use the following command to compile tester.c and link it with your libftprintf.a:
 
 ```console
