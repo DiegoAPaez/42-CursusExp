@@ -18,7 +18,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 INCLUDE = printf.h
 
-SRC = ft_putaddress.c \
+SRC = ft_printf.c \
+	ft_putaddress.c \
 	ft_putchar.c \
 	ft_puthex.c \
 	ft_putnbr.c \
