@@ -16,8 +16,8 @@ Values of the passed arguments can be accessed through the header file named <st
 
 **_Methods_**
 
-**va_start(va_list ap, argN)** - This enables access to variadic function arguments, where _va_list_ will be the pointer to the last fixed argument in the variadic function _argN_ is the last fixed argument in the variadic function.
-From the above variadic function (ft_printf(char const *str, ...);), str is the last fixed argument making it the argN. Whereas *va_list ap\* will be a pointer to argN (str).
+**va_start(va_list ap, argN)** - This enables access to variadic function arguments, where _va_list_ will be the pointer to the last fixed argument in the variadic function, _argN_ is the last fixed argument in the variadic function.
+From the above variadic function (`ft_printf(char const *str, ...);`), str is the last fixed argument making it the argN. Whereas *va_list ap\* will be a pointer to argN (str).
 
 **va_arg(va_list ap, type)** - This one accesses the next variadic function argument, _va_list ap_ is the same as above i.e a pointer to argN, _type_ indicates the data type the _va_list ap_ should expect (double, float, int etc.).
 
