@@ -32,7 +32,7 @@ int main()
     test_file("test_files/single_line.txt");       // Single line with no newline
     test_file("test_files/multiple_short_lines.txt"); // Multiple short lines
     test_file("test_files/single_long_line.txt");   // Single long line exceeding BUFFER_SIZE
-    test_file("ttest_filesests/multiple_lines.txt"); // Multiple long lines exceeding BUFFER_SIZE
+    test_file("test_files/multiple_lines.txt"); // Multiple long lines exceeding BUFFER_SIZE
 
     // Edge Cases
     test_file("test_files/empty_file.txt");         // Empty file
