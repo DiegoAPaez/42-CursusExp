@@ -1,3 +1,5 @@
+![repository_bg_small](https://github.com/user-attachments/assets/0cafa10a-97da-4206-a20c-d6b6949863f8)
+
 # My 42 Barcelona Journey 🚀
 
 Welcome to my personal repository! Here you'll find a collection of projects that showcase my progress and experience at [42 Barcelona](https://www.42barcelona.com), where I’m learning by doing through an intensive, project-based curriculum. This repository will gradually grow as I complete each project in my cursus, covering a wide range of programming topics and skills.
